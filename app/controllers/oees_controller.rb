@@ -4,7 +4,9 @@ include REXML
 class OeesController < ApplicationController
   include REXML
   def new
-    xmlfile = File.read("C:/rep2.xml")
+    
+    xmlfile = File.read(File.dirname(__FILE__) + '/rep2.xml')
+    # xmlfile = File.read("C:/rep2.xml")    
     xmldoc = Document.new(xmlfile)
     Oee.delete_all
     xmldoc.elements.each("BI_ARBPL/Line") do |element|
