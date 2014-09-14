@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head></head>
+	<body onload="myFunction(this)">
+		<div id="wrapper">
+
+			<div id="page-wrapper">
+
+				<div class="row">
+					<div class="col-lg-12">
+						<h1>Tabellen</h1>
+						<ol class="breadcrumb">
+							<li>
+								<a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+							</li>
+							<li class="active">
+								<i class="fa fa-table"></i> Tabellen
+							</li>
+						</ol>
+					</div>
+				</div><!-- /.row -->
+
+				<div class="row">
+					<div class="col-lg-6">
+						<h2>OEE</h2>
+						<div class="table-responsive">
+							<table class="table table-bordered table-hover tablesorter" id="werte" data-toggle="table" data-height="299" data-search="true">
+								<thead>
+									<tr>
+										<th data-field="werk" data-checkbox="true" i class="fa fa-sort">Werk</th>
+										<th data-field="datum" data-sortable="true" i class="fa fa-sort">Datum</th>
+										<th data-field="arbpl" data-sortable="true" i class="fa fa-sort">Arbeitsplatz</th>
+										<th data-field="shift" data-sortable="true" i class="fa fa-sort">Schicht</th>
+										<th data-field="isprod" data-checkbox="true" i class="fa fa-sort">Produktion</th>
+										<th data-field="isruest" data-sortable="true" i class="fa fa-sort">Rüsten</th>
+										<th data-field="isstill" data-sortable="true" i class="fa fa-sort">Stillstand</th>
+										<th data-field="isstoe" data-sortable="true" i class="fa fa-sort">Störung</th>
+									</tr>
+								</thead>
+
+								<% oees = Oee.all %>
+								<% oees .each do |oee|%>
+								<tr onclick="myFunction(this)" onmousemove="myFunction(this)">
+									<td><%= h oee.werk %></td>
+									<td><%= h oee.datum %></td>
+									<td><%= h oee.arbpl %></td>
+									<td><%= h oee.shift_text %></td>
+									<td><%= h oee.ist_prod %></td>
+									<td><%= h oee.ist_ruest %></td>
+									<td><%= h oee.ist_still %></td>
+									<td><%= h oee.ist_stoe %></td>
+								</tr>
+								<% end %>
+								</tr>
+								</tbody>
+							</table>
+							<script>
+								function myFunction(x) {
+									var index = x.rowIndex;
+									var daten = [];
+									if (index == undefined) {
+										index = 1;
+									};
+									var refTab = document.getElementById("werte");
+									var ttl;
+
+									var title;
+									var leerzeichen = String.fromCharCode(32);
+									var str0;
+									var str1;
+
+									var str2;
+									var str3;
+
+									var prod;
+									var ruest;
+									var still;
+									var stoe;
+
+									row0 = refTab.rows[0];
+									row = refTab.rows[index];
+									col = row.cells[1];
+									str0 = col.firstChild.nodeValue;
+									col = row.cells[2];
+									str1 = col.firstChild.nodeValue;
+									col = row.cells[3];
+									str2 = col.firstChild.nodeValue;
+									title = str0 + leerzeichen + leerzeichen + str1 + leerzeichen + str2;
+									document.getElementById("pi_chart_title").innerHTML = title;
+									col = row0.cells[4];
+									str0 = col.firstChild.nodeValue;
+									col = row0.cells[5];
+									str1 = col.firstChild.nodeValue;
+									col = row0.cells[6];
+									str2 = col.firstChild.nodeValue;
+									col = row0.cells[7];
+									str3 = col.firstChild.nodeValue;
+									col = row.cells[4];
+									prod = col.firstChild.nodeValue;
+									col = row.cells[5];
+									ruest = col.firstChild.nodeValue;
+									col = row.cells[6];
+									still = col.firstChild.nodeValue;
+									col = row.cells[7];
+									stoe = col.firstChild.nodeValue;
+
+									prod = parseFloat(prod);
+
+									ruest = parseFloat(ruest);
+
+									still = parseFloat(still);
+
+									stoe = parseFloat(stoe);
+
+									// alert(prod);
+									var data = [{
+										label : str0,
+										data : prod,
+										color : "#ADFF2F"
+									}, {
+										label : str1,
+										data : ruest,
+										color : "#C7C7C7"
+									}, {
+										label : str2,
+										data : still,
+										color : "#FFA500"
+									}, {
+										label : str3,
+										data : stoe,
+										color : "#B22222"
+									}];
+
+									// alert(data.join());
+									var plotObj = $.plot($("#flot-chart-pie"), data, {
+										series : {
+											pie : {
+												show : true,
+												innerRadius : 0.3,
+												label : {
+													show : true
+												}
+											}
+										},
+										grid : {
+											hoverable : true
+										},
+										tooltip : true,
+										tooltipOpts : {
+											content : "%p.0%, %s", // show percentages, rounding to 2 decimal places
+											shifts : {
+												x : 20,
+												y : 0
+											},
+											defaultTheme : false
+										}
+									});
+								};
+							</script>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-5-fixed">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h3 class="panel-title" id="pi_chart_title"><i class="fa fa-long-arrow-right"></i> Pie Chart Example with Tooltips</h3>
+								</div>
+								<div class="panel-body">
+									<div class="flot-chart">
+										<div class="flot-chart-content" id="flot-chart-pie"></div>
+									</div>
+									<div class="text-right">
+										<!-- <p id="demo" name="demo"></p> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!-- /.row -->
+					<!--			</div><!-- /.row -->
+				</div><!-- /#page-wrapper -->
+
+			</div><!-- /#wrapper -->
+
+			<!-- JavaScript -->
+			<script src="js/jquery-1.10.2.js"></script>
+			<script src="js/bootstrap.js"></script>
+
+			<!-- Page Specific Plugins -->
+			<script src="js/tablesorter/jquery.tablesorter.js"></script>
+			<script src="js/tablesorter/tables.js"></script>
+
+			<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+			<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+			<script src="js/morris/chart-data-morris.js"></script>
+			<!--[if lte IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
+			<script src="js/flot/jquery.flot.js"></script>
+			<script src="js/flot/jquery.flot.tooltip.min.js"></script>
+			<script src="js/flot/jquery.flot.resize.js"></script>
+			<script src="js/flot/jquery.flot.pie.js"></script>
+			<script src="js/flot/chart-data-flot.js"></script>
+
+	</body>
+</html>

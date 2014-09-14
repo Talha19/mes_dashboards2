@@ -1,0 +1,653 @@
+<% if user_signed_in? %>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head></head>
+
+	<body onload="myFunction(this)" onresize="myFunction(this)">
+
+		<div id="wrapper">
+			<div id="page-wrapper"> 
+
+				<div class="row">
+					<div class="col-lg-12">
+						<h1>Dashboard <small>Statistische Overview</small></h1>
+						<!-- <ol class="breadcrumb">
+						<li class="active">
+						<i class="fa fa-dashboard"></i> Dashboard
+						</li>
+						</ol> -->
+						<div class="alert alert-success alert-dismissable">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+								&times;
+							</button>
+							Herzlich Willkommen. Hier sind Ihre aktuellen MES Kennzahlen.
+							ORBIS AG Saarbrücken.
+						</div>
+					</div>
+				</div><!-- /.row -->
+
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-6">
+										<i class="fa fa-comments fa-5x"></i>
+									</div>
+									<div class="col-xs-6 text-center">
+										<% max = Oee.maximum("ist_prod") %>
+										<% oee = Oee.find_by ist_prod: max %>
+										<p class="announcement-heading">
+											Arbeitsplatz: <%= oee.arbpl %>
+										</p>
+										<p class="announcement-heading">
+											<%= ((oee.ist_prod / (60*60))).round 2 %>h = <%= (oee.ist_prod / 28800*100).round / 1 %>%
+										</p>
+										<p class="announcement-text">
+											Datum: <%= oee.datum %>
+										</p>
+										<p class="announcement-text">
+											<%= oee.shift_text %>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer announcement-bottom">
+								<div class="row">
+									<div class="col-xs-6">
+										Top Produktion :)
+									</div>
+									<div class="col-xs-6 text-right"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="panel panel-warning">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-6">
+										<i class="fa fa-check fa-5x"></i>
+									</div>
+									<div class="col-xs-6 text-center">
+										<% max = Oee.maximum("ist_ruest") %>
+										<% oee = Oee.find_by ist_ruest: max %>
+										<p class="announcement-heading">
+											Arbeitsplatz: <%= oee.arbpl %>
+										</p>
+										<p class="announcement-heading">
+											<%= ((oee.ist_ruest / (60*60))).round 2 %>h = <%= (oee.ist_ruest / 28800*100).round / 1 %>%
+										</p>
+										<p class="announcement-text">
+											Datum: <%= oee.datum %>
+										</p>
+										<p class="announcement-text">
+											<%= oee.shift_text %>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer announcement-bottom">
+								<div class="row">
+									<div class="col-xs-6">
+										Top Rüsten
+									</div>
+									<div class="col-xs-6 text-right">
+										<i class="fa fa-arrow-circle-right"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="panel panel-very-danger">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-6">
+										<i class="fa fa-tasks fa-5x"></i>
+									</div>
+									<div class="col-xs-6 text-center">
+										<% max = Oee.maximum("ist_stoe") %>
+										<% oee = Oee.find_by ist_stoe: max %>
+										<p class="announcement-heading">
+											Arbeitsplatz: <%= oee.arbpl %>
+										</p>
+										<p class="announcement-heading">
+											<%= ((oee.ist_stoe / (60*60))).round 2 %>h = <%= (oee.ist_stoe / 28800*100).round / 1 %>%
+										</p>
+										<p class="announcement-text">
+											Datum: <%= oee.datum %>
+										</p>
+										<p class="announcement-text">
+											<%= oee.shift_text %>
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="panel-footer announcement-bottom">
+								<div class="row">
+									<div class="col-xs-6">
+										Top Störung :(
+									</div>
+									<div class="col-xs-6 text-right">
+										<i class="fa fa-arrow-circle-right"></i>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="panel panel-danger ">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-6">
+										<i class="fa fa-comments fa-5x"></i>
+									</div>
+									<div class="col-xs-6 text-center">
+										<% max = Oee.maximum("ist_still") %>
+										<% oee = Oee.find_by ist_still: max %>
+										<p class="announcement-heading">
+											Arbeitsplatz: <%= oee.arbpl %>
+										</p>
+										<p class="announcement-heading">
+											<%= ((oee.ist_still / (60*60))).round 2 %>h = <%= (oee.ist_still / 28800*100).round / 1 %>%
+										</p>
+										<p class="announcement-text">
+											Datum: <%= oee.datum %>
+										</p>
+										<p class="announcement-text">
+											<%= oee.shift_text %>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer announcement-bottom">
+								<div class="row">
+									<div class="col-xs-6">
+										Top Stillstand
+									</div>
+									<div class="col-xs-6 text-right">
+										<i class="fa fa-arrow-circle-right"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.row -->
+
+				<!-- <div class="row">
+				<div class="col-lg-12">
+				<div class="panel panel-primary">
+				<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Traffic Statistics: October 1, 2013 - October 31, 2013</h3>
+				</div>
+				<div class="panel-body">
+				<div id="morris-chart-area"></div>
+				</div>
+				</div>
+				</div> -->
+				<!--</div><!-- /.row -->
+
+				<div class="row">
+					<!-- <div class="col-lg-4">
+					<div class="panel panel-primary">
+					<div class="panel-heading">
+					<h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Traffic Sources: October 1, 2013 - October 31, 2013</h3>
+					</div>
+					<div class="panel-body">
+					<div id="morris-chart-donut"></div>
+					<div class="text-right">
+					<a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
+					</div>
+					</div>
+					</div>
+					</div> -->
+					<!-- <div class="col-lg-4">
+					<div class="panel panel-primary">
+					<div class="panel-heading">
+					<h3 class="panel-title"><i class="fa fa-clock-o"></i> Recent Activity</h3>
+					</div>
+					<div class="panel-body">
+					<div class="list-group">
+					<a href="#" class="list-group-item"> <span class="badge">just now</span> <i class="fa fa-calendar"></i> Calendar updated </a>
+					<a href="#" class="list-group-item"> <span class="badge">4 minutes ago</span> <i class="fa fa-comment"></i> Commented on a post </a>
+					<a href="#" class="list-group-item"> <span class="badge">23 minutes ago</span> <i class="fa fa-truck"></i> Order 392 shipped </a>
+					<a href="#" class="list-group-item"> <span class="badge">46 minutes ago</span> <i class="fa fa-money"></i> Invoice 653 has been paid </a>
+					<a href="#" class="list-group-item"> <span class="badge">1 hour ago</span> <i class="fa fa-user"></i> A new user has been added </a>
+					<a href="#" class="list-group-item"> <span class="badge">2 hours ago</span> <i class="fa fa-check"></i> Completed task: "pick up dry cleaning" </a>
+					<a href="#" class="list-group-item"> <span class="badge">yesterday</span> <i class="fa fa-globe"></i> Saved the world </a>
+					<a href="#" class="list-group-item"> <span class="badge">two days ago</span> <i class="fa fa-check"></i> Completed task: "fix error on sales page" </a>
+					</div>
+					<div class="text-right">
+					<a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
+					</div>
+					</div>
+					</div>
+					</div> -->
+					<div class="col-lg-3">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h3 class="panel-title"><i class="fa fa-money"></i> Top Produktion</h3>
+							</div>
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table table-bordered table-hover table-striped tablesorter" id="ist_prod_tabelle" onmouseover="myFunction(this)">
+										<thead>
+											<tr>
+												<th data-field="isprod" data-checkbox="true" i class="fa fa-sort">Produktion</th>
+												<th data-field="isruest" data-sortable="true" i class="fa fa-sort">Rüsten</th>
+												<th data-field="isstill" data-sortable="true" i class="fa fa-sort">Störung</th>
+												<th data-field="isstoe" data-sortable="true" i class="fa fa-sort">Stillstand</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr onclick="myFunction(this)">
+												<% max = Oee.maximum("ist_prod") %>
+												<% oee = Oee.find_by ist_prod: max %>
+												<td><%= ((oee.ist_prod / (60*60))).round 2 %>h = <%= (oee.ist_prod / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_ruest / (60*60))).round 2 %>h = <%= (oee.ist_ruest / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_stoe / (60*60))).round 2 %>h = <%= (oee.ist_stoe / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_still / (60*60))).round 2 %>h = <%= (oee.ist_still / 28800*100).round / 1 %>%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="text-right">
+									<a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="panel panel-warning">
+							<div class="panel-heading">
+								<h3 class="panel-title"><i class="fa fa-money"></i> Top Rüsten</h3>
+							</div>
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table table-bordered table-hover table-striped tablesorter" id="ist_ruest_tabelle" >
+										<thead>
+											<tr>
+												<th data-field="isprod" data-checkbox="true" i class="fa fa-sort">Produktion</th>
+												<th data-field="isruest" data-sortable="true" i class="fa fa-sort">Rüsten</th>
+												<th data-field="isstill" data-sortable="true" i class="fa fa-sort">Störung</th>
+												<th data-field="isstoe" data-sortable="true" i class="fa fa-sort">Stillstand</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<% max = Oee.maximum("ist_ruest") %>
+												<% oee = Oee.find_by ist_ruest: max %>
+												<td><%= ((oee.ist_prod / (60*60))).round 2 %>h = <%= (oee.ist_prod / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_ruest / (60*60))).round 2 %>h = <%= (oee.ist_ruest / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_stoe / (60*60))).round 2 %>h = <%= (oee.ist_stoe / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_still / (60*60))).round 2 %>h = <%= (oee.ist_still / 28800*100).round / 1 %>%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="text-right">
+									<a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="panel panel-very-danger">
+							<div class="panel-heading">
+								<h3 class="panel-title"><i class="fa fa-money"></i> Top Störung</h3>
+							</div>
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table table-bordered table-hover table-striped tablesorter" id="ist_stoe_tabelle" >
+										<thead>
+											<tr>
+												<th data-field="isprod" data-checkbox="true" i class="fa fa-sort">Produktion</th>
+												<th data-field="isruest" data-sortable="true" i class="fa fa-sort">Rüsten</th>
+												<th data-field="isstill" data-sortable="true" i class="fa fa-sort">Störung</th>
+												<th data-field="isstoe" data-sortable="true" i class="fa fa-sort">Stillstand</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<% max = Oee.maximum("ist_stoe") %>
+												<% oee = Oee.find_by ist_stoe: max %>
+												<td><%= ((oee.ist_prod / (60*60))).round 2 %>h = <%= (oee.ist_prod / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_ruest / (60*60))).round 2 %>h = <%= (oee.ist_ruest / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_stoe / (60*60))).round 2 %>h = <%= (oee.ist_stoe / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_still / (60*60))).round 2 %>h = <%= (oee.ist_still / 28800*100).round / 1 %>%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="text-right">
+									<a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="panel panel-danger">
+							<div class="panel-heading">
+								<h3 class="panel-title"><i class="fa fa-money"></i> Top Stillstand</h3>
+							</div>
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table table-bordered table-hover table-striped tablesorter" id="ist_still_tabelle" >
+										<thead>
+											<tr>
+												<th data-field="isprod" data-checkbox="true" i class="fa fa-sort">Produktion</th>
+												<th data-field="isruest" data-sortable="true" i class="fa fa-sort">Rüsten</th>
+												<th data-field="isstill" data-sortable="true" i class="fa fa-sort">Störung</th>
+												<th data-field="isstoe" data-sortable="true" i class="fa fa-sort">Stillstand</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<% max = Oee.maximum("ist_still") %>
+												<% oee = Oee.find_by ist_still: max %>
+												<td><%= ((oee.ist_prod / (60*60))).round 2 %>h = <%= (oee.ist_prod / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_ruest / (60*60))).round 2 %>h = <%= (oee.ist_ruest / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_stoe / (60*60))).round 2 %>h = <%= (oee.ist_stoe / 28800*100).round / 1 %>%</td>
+												<td><%= ((oee.ist_still / (60*60))).round 2 %>h = <%= (oee.ist_still / 28800*100).round / 1 %>%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="text-right">
+									<a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.row -->
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h3 class="panel-title" id="pi_chart_title"><i class="fa fa-long-arrow-right"></i> Produktion </h3>
+							</div>
+							<div class="panel-body">
+								<div class="flot-chart">
+									<div class="flot-chart-content" id="flot-chart-pie-prod"></div>
+								</div>
+								<div class="text-right">
+									<!-- <p id="demo" name="demo"></p> -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="panel panel-warning">
+							<div class="panel-heading">
+								<h3 class="panel-title" id="pi_chart_title"><i class="fa fa-long-arrow-right"></i> Rüsten </h3>
+							</div>
+							<div class="panel-body">
+								<div class="flot-chart">
+									<div class="flot-chart-content" id="flot-chart-pie-ruest" ></div>
+								</div>
+								<div class="text-right">
+									<!-- <p id="demo" name="demo"></p> -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="panel panel-very-danger">
+							<div class="panel-heading">
+								<h3 class="panel-title" id="pi_chart_title"><i class="fa fa-long-arrow-right"></i> Störung </h3>
+							</div>
+							<div class="panel-body">
+								<div class="flot-chart">
+									<div class="flot-chart-content" id="flot-chart-pie-stoe"></div>
+								</div>
+								<div class="text-right">
+									<!-- <p id="demo" name="demo"></p> -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="panel panel-danger">
+							<div class="panel-heading">
+								<h3 class="panel-title" id="pi_chart_title"><i class="fa fa-long-arrow-right"></i> Stillstand </h3>
+							</div>
+							<div class="panel-body">
+								<div class="flot-chart">
+									<div class="flot-chart-content" id="flot-chart-pie-still"></div>
+								</div>
+								<div class="text-right">
+									<!-- <p id="demo" name="demo"></p> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /#page-wrapper -->
+
+		</div><!-- /#wrapper -->
+
+		<!-- JavaScript -->
+		<script>
+			function myFunction(x) {
+				var index = x.rowIndex;
+				if (index == undefined) {
+					index = 1;
+				};
+				var daten = [];
+				for (var i = 1; i <= 4; i++) {
+					switch(i) {
+						case 1:
+							var refTab = document.getElementById("ist_prod_tabelle");
+							// alert(i);
+							break;
+						case 2:
+							var refTab = document.getElementById("ist_ruest_tabelle");
+							// alert(i);
+							break;
+						case 3:
+							var refTab = document.getElementById("ist_stoe_tabelle");
+							// alert(i);
+							break;
+						case 4:
+							var refTab = document.getElementById("ist_still_tabelle");
+							// alert(i);
+							break;
+					}
+
+					var ttl;
+
+					var title;
+					var str0;
+					var str1;
+
+					var str2;
+					var str3;
+
+					var prod;
+					var ruest;
+					var still;
+					var stoe;
+					// alert(index);
+					row0 = refTab.rows[0];
+					row = refTab.rows[index];
+					// alert(index);
+					// col = row.cells[1];
+					// str0 = col.firstChild.nodeValue;
+					// col = row.cells[2];
+					// str1 = col.firstChild.nodeValue;
+					// col = row.cells[3];
+					// str2 = col.firstChild.nodeValue;
+					// title = str0 + leerzeichen + leerzeichen + str1 + leerzeichen + str2;
+					// document.getElementById("pi_chart_title").innerHTML = title;
+					col = row0.cells[0];
+					str0 = col.firstChild.nodeValue;
+
+					col = row0.cells[1];
+					str1 = col.firstChild.nodeValue;
+					col = row0.cells[2];
+					str2 = col.firstChild.nodeValue;
+					col = row0.cells[3];
+					str3 = col.firstChild.nodeValue;
+					col = row.cells[0];
+					prod = col.firstChild.nodeValue;
+					col = row.cells[1];
+					ruest = col.firstChild.nodeValue;
+					col = row.cells[2];
+					still = col.firstChild.nodeValue;
+					col = row.cells[3];
+					stoe = col.firstChild.nodeValue;
+
+					prod = parseFloat(prod);
+
+					ruest = parseFloat(ruest);
+
+					still = parseFloat(still);
+
+					stoe = parseFloat(stoe);
+
+					var data = [{
+						label : str0,
+						data : prod,
+						color : "#94e0a2"
+					}, {
+						label : str1,
+						data : ruest,
+						color : "#f8ce77"
+					}, {
+						label : str3,
+						data : stoe,
+						color : "#d9534f"
+					}, {
+						label : str2,
+						data : still,
+						color : "#CD0000"
+					}];
+
+					// alert(data.join());
+					switch (i) {
+						case 1:
+							var plotObj = $.plot($("#flot-chart-pie-prod"), data, {
+								series : {
+									pie : {
+										show : true,
+										innerRadius : 0.3,
+										label : {
+											show : true
+										}
+									}
+								},
+								grid : {
+									hoverable : true
+								},
+								tooltip : true,
+								tooltipOpts : {
+									content : "%p.0%, %s", // show percentages, rounding to 2 decimal places
+									shifts : {
+										x : 20,
+										y : 0
+									},
+									defaultTheme : false
+								}
+							});
+							break;
+						case 2:
+							var plotObj = $.plot($("#flot-chart-pie-ruest"), data, {
+								series : {
+									pie : {
+										show : true,
+										innerRadius : 0.3,
+										label : {
+											show : true
+										}
+									}
+								},
+								grid : {
+									hoverable : true
+								},
+								tooltip : true,
+								tooltipOpts : {
+									content : "%p.0%, %s", // show percentages, rounding to 2 decimal places
+									shifts : {
+										x : 20,
+										y : 0
+									},
+									defaultTheme : false
+								}
+							});
+							break;
+						case 3:
+							var plotObj = $.plot($("#flot-chart-pie-stoe"), data, {
+								series : {
+									pie : {
+										show : true,
+										innerRadius : 0.3,
+										label : {
+											show : true
+										}
+									}
+								},
+								grid : {
+									hoverable : true
+								},
+								tooltip : true,
+								tooltipOpts : {
+									content : "%p.0%, %s", // show percentages, rounding to 2 decimal places
+									shifts : {
+										x : 20,
+										y : 0
+									},
+									defaultTheme : false
+								}
+							});
+							break;
+						case 4:
+							var plotObj = $.plot($("#flot-chart-pie-still"), data, {
+								series : {
+									pie : {
+										show : true,
+										innerRadius : 0.3,
+										label : {
+											show : true
+										}
+									}
+								},
+								grid : {
+									hoverable : true
+								},
+								tooltip : true,
+								tooltipOpts : {
+									content : "%p.0%, %s", // show percentages, rounding to 2 decimal places
+									shifts : {
+										x : 20,
+										y : 0
+									},
+									defaultTheme : false
+								}
+							});
+							break;
+					}
+				}
+			};
+		</script>
+
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/bootstrap.js"></script>
+
+		<!-- Page Specific Plugins -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+		<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+		<script src="js/morris/chart-data-morris.js"></script>
+		<script src="js/tablesorter/jquery.tablesorter.js"></script>
+		<script src="js/tablesorter/tables.js"></script>
+
+	</body>
+</html>
+<% else %>
+<li>
+	<%= link_to "Sign in", new_user_session_path %>
+</li>
+<% end %>
