@@ -8,4 +8,9 @@ class HomeController < ApplicationController
         redirect_to :oee_new
       end
   end
+  
+  def main_view
+     redirect_to :hoem_index
+  end
+  
 end

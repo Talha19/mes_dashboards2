@@ -139,20 +139,6 @@
 			<% end %>
 			<div id="page-wrapper">
 				<div class="row">
-
-					<% if flash[:notice] %>
-					<div class="col-lg-5">
-						<div class="userstatus">
-
-							<div class="alert alert-info alert-dismissable">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-									&times;
-								</button>
-								<%= flash[:notice] %>
-							</div>
-						</div>
-					</div>
-					<% end %>
 					<%= yield %>
 				</div>
 			</div><!-- /#page-wrapper -->

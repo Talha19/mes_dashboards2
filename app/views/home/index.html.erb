@@ -485,7 +485,10 @@
 	</body>
 </html>
 <% else %>
-<li>
-	<%= link_to "Sign in", new_user_session_path %>
-</li>
+  <script type="text/javascript">
+    window.location.href="/users/sign_in"  // put your correct path in a string here
+  </script>
+<!-- <li>
+	 <%= link_to "Sign in", new_user_session_path %>
+</li> -->
 <% end %>

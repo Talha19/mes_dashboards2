@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  
-   get "home/index"
+  root :to =>'home#index'
+  get "home/index"
 
-   get "home/tables"
-   
-   # match '/new' => 'oee#new', :as => 'new'
+  get "home/tables"
+
+  # match '/new' => 'oee#new', :as => 'new'
   resources :invoices
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -62,8 +62,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-    get "oee/new" => "oees#new"
+  get "oee/new" => "oees#new"
 
-
-    root :to =>'home#index'
 end
