@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913122708) do
+ActiveRecord::Schema.define(version: 20140916170843) do
+
+  create_table "arbeitsplatzs", force: true do |t|
+    t.string   "name"
+    t.string   "bezeichnung"
+    t.integer  "werk_id"
+    t.string   "maschine"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "maschinentyps", force: true do |t|
+    t.string   "name"
+    t.string   "bezeichnung"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "oees", force: true do |t|
     t.string   "werk"
@@ -43,5 +59,13 @@ ActiveRecord::Schema.define(version: 20140913122708) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "werks", force: true do |t|
+    t.string   "werk"
+    t.string   "stadt"
+    t.string   "land"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

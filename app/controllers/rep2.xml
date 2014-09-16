@@ -23,7 +23,7 @@
     <Line>
         <werks name="Werk">1000</werks>
         <datum name="Datum">02.05.2013</datum>
-        <arbpl name="Arbeitsplatz">REP01_C</arbpl>
+        <arbpl name="Arbeitsplatz">REP01_A</arbpl>
         <shift_text name="shift_text">Spätschicht</shift_text>
         <ist_prod name="ist_prod">6279.00 </ist_prod>
         <ist_rues name="ist_rues">8311.00 </ist_rues>
@@ -33,7 +33,7 @@
     <Line>
         <werks name="Werk">1000</werks>
         <datum name="Datum">03.05.2013</datum>
-        <arbpl name="Arbeitsplatz">REP01_C</arbpl>
+        <arbpl name="Arbeitsplatz">REP01_A</arbpl>
         <shift_text name="shift_text">Frühschicht</shift_text>
         <ist_prod name="ist_prod">6061.00 </ist_prod>
         <ist_rues name="ist_rues">8711.00 </ist_rues>
@@ -53,7 +53,7 @@
     <Line>
         <werks name="Werk">1000</werks>
         <datum name="Datum">03.05.2013</datum>
-        <arbpl name="Arbeitsplatz">REP01_C</arbpl>
+        <arbpl name="Arbeitsplatz">REP01_A</arbpl>
         <shift_text name="shift_text">Spätschicht</shift_text>
         <ist_prod name="ist_prod">5953.00 </ist_prod>
         <ist_rues name="ist_rues">7483.00 </ist_rues>
@@ -83,7 +83,7 @@
     <Line>
         <werks name="Werk">1000</werks>
         <datum name="Datum">04.05.2013</datum>
-        <arbpl name="Arbeitsplatz">REP01_C</arbpl>
+        <arbpl name="Arbeitsplatz">REP01_A</arbpl>
         <shift_text name="shift_text">Spätschicht</shift_text>
         <ist_prod name="ist_prod">5244.00 </ist_prod>
         <ist_rues name="ist_rues">7536.00 </ist_rues>
@@ -103,7 +103,7 @@
     <Line>
         <werks name="Werk">1000</werks>
         <datum name="Datum">05.05.2013</datum>
-        <arbpl name="Arbeitsplatz">REP01_C</arbpl>
+        <arbpl name="Arbeitsplatz">REP01_A</arbpl>
         <shift_text name="shift_text">Mittagsschicht</shift_text>
         <ist_prod name="ist_prod">6342.00 </ist_prod>
         <ist_rues name="ist_rues">6455.00 </ist_rues>
@@ -131,9 +131,9 @@
         <ist_stoe name="ist_stoe">7106.00 </ist_stoe>
     </Line>
     <Line>
-        <werks name="Werk">1000</werks>
+        <werks name="Werk">2000</werks>
         <datum name="Datum">06.05.2013</datum>
-        <arbpl name="Arbeitsplatz">REP01_C</arbpl>
+        <arbpl name="Arbeitsplatz">REP01_A</arbpl>
         <shift_text name="shift_text">Mittagsschicht</shift_text>
         <ist_prod name="ist_prod">5522.00 </ist_prod>
         <ist_rues name="ist_rues">8338.00 </ist_rues>
@@ -151,7 +151,7 @@
         <ist_stoe name="ist_stoe">7219.00 </ist_stoe>
     </Line>
     <Line>
-        <werks name="Werk">1000</werks>
+        <werks name="Werk">2000</werks>
         <datum name="Datum">07.05.2013</datum>
         <arbpl name="Arbeitsplatz">REP01_C</arbpl>
         <shift_text name="shift_text">Frühschicht</shift_text>
@@ -171,7 +171,7 @@
         <ist_stoe name="ist_stoe">7715.00 </ist_stoe>
     </Line>
     <Line>
-        <werks name="Werk">1000</werks>
+        <werks name="Werk">2000</werks>
         <datum name="Datum">07.05.2013</datum>
         <arbpl name="Arbeitsplatz">REP01_C</arbpl>
         <shift_text name="shift_text">Spätschicht</shift_text>
