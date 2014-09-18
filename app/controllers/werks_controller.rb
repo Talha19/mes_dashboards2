@@ -23,7 +23,7 @@ class WerksController < ApplicationController
     @werk = Werk.find(params[:id])
     @werk.destroy
 
-    redirect_to werks_path
+    # redirect_to werks
   end
 
   def create
@@ -34,6 +34,15 @@ class WerksController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def update 
+    @werk = Werk.find(params[:id])
+
+    @werk.update_attributes(werk_params)
+
+    @werk.save!
+    redirect_to @werk
   end
 
   private

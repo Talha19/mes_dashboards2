@@ -1,21 +1,24 @@
-
 <div id="wrapper">
 	<div id="page-wrapper">
 		<div class="row">
-			<div class="col-lg-3">
-<h1>
-  <%= @werk.werk %>
-</h1>
- 
-<p>
-  <%= @werk.stadt %>
-</p>
+			<div class="col-lg-10">
+				<h1> <%= @werk.werk %> </h1>
 
-<p>
-  <%= @werk.land %>
-</p>
+				<p>
+					<%= @werk.stadt %>
+				</p>
 
-<%= link_to "Back to Werks", werks_path, class: 'btn btn-info' %>
+				<p>
+					<%= @werk.land %>
+				</p>
+				<ul class="list-group">
+					<%= render @werk.arbeitsplatzs %>
+				</ul>
+				<div class="col-lg-8">
+					<h2>Neuer Arbeitsplatz</h2>
+					<%= render 'arbeitsplatzs/form' %>
+					<%= link_to "Zurück zu den Werken", werks_path, class: 'btn btn-info' %>
+				</div>
 
 			</div>
 		</div>

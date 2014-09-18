@@ -1,29 +1,33 @@
-<
+
 <div id="wrapper">
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-3">
+				<h1>Arbeitsplätze</h1>
 				<table class="table">
 					<thead>
 						<tr>
-							<th>Werk</th>
 							<th>Arbeitsplatz</th>
-							<th>Bezeichnung</th>
-							<th>Maschine</th>
+							<th>Bezeichnung</th>						
 							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
-						<% Arbeitsplatz.all.each do |arbeitsplatz| %>
+						<% Arbeitsplatz.all.each do |arbeitplatz| %>
 						<tr>
-							<td><%= arbeitsplatz.werk_id %></td>
-							<td><%= arbeitsplatz.name %></td>
-							<td><%= arbeitsplatz.bezeichnung %></td>
-							<td><%= arbeitsplatz.maschine %></td>
-						</tr>
+							<td><%= arbeitplatz.name %></td>
+							<td><%= arbeitplatz.bezeichnung %></td>
+							<td> 
+
+
+							<%= link_to "Edit", arbeitsplatz_edit_path(arbeitplatz), class: 'btn btn-info' %>
+
+					</tr>
 						<% end %>
 					</tbody>
 				</table>
+
+				<%= link_to "New article", new_arbeitsplatz_maschinentyps_path(arbeitplatz), class: 'btn btn-success' %> 
 
 			</div>
 		</div>

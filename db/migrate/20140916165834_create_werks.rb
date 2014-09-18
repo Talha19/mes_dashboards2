@@ -4,7 +4,7 @@ class CreateWerks < ActiveRecord::Migration
       t.string :werk
       t.string :stadt
       t.string :land
-
+      
       t.timestamps
     end
   end

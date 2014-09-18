@@ -1,25 +1,39 @@
 class ArbeitsplatzsController < ApplicationController
-before_action :authenticate_user!, except: [:create]
+  before_action :authenticate_user!, except: [:create]
   
-  
-  
-  def create
-    @werk = Werks.find(params[:article_id])
-    @comment = @article.comments.create(comment_params)
-    redirect_to article_path(@article)
+  def index
+    @arbeitsplatz = Arbeitsplatz.all
+  end
+
+ def create
+    @werk = Werk.find(params[:werk_id])
+    @arbeitsplatz = @werk.arbeitsplatzs.create(abpl_params)
+    redirect_to werk_path(@werk)
   end
 
   def destroy
-    @article = Article.find(params[:article_id])
-    @comment = @article.comments.find(params[:id])
+    @werk = Werk.find(params[:werk_id])
+    @arbeitsplatz = @werk.arbeitsplatzs.find(params[:id])
 
-    @comment.destroy
-    redirect_to article_path(@article)
+    @arbeitsplatz.destroy
+    redirect_to werk_path(@werk)
+  end
+
+  def new
+    @arbeitsplatz = Arbeitsplatz.new
+  end
+
+  def edit
+    @arbeitsplatz = Arbeitsplatz.find(params[:id])
+  end
+
+  def show
+    @arbeitsplatz = Arbeitsplatz.find(params[:id])
   end
 
   private
 
-  def comment_params
-    params.require(:comment).permit(:commenter, :body)
+  def abpl_params
+    params.require(:arbeitsplatz).permit(:name, :bezeichnung)
   end
 end

@@ -2,10 +2,9 @@
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
-				<%= bootstrap_form_for @werk do |f| %>
-				<%= f.text_field :werk %>
-				<%= f.text_field :stadt %>
-				<%= f.text_field :land %>
+				<%= bootstrap_form_for([@werk, @werk.arbeitsplatzs.build]) do |f| %>
+				<%= f.text_field :name %>
+				<%= f.text_area :bezeichnung %>
 				<%= f.submit class: 'btn btn-success' %>
 				<% end %>
 			</div>
