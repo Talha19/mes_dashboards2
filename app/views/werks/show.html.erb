@@ -1,0 +1,23 @@
+
+<div id="wrapper">
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-3">
+<h1>
+  <%= @werk.werk %>
+</h1>
+ 
+<p>
+  <%= @werk.stadt %>
+</p>
+
+<p>
+  <%= @werk.land %>
+</p>
+
+<%= link_to "Back to Werks", werks_path, class: 'btn btn-info' %>
+
+			</div>
+		</div>
+	</div>
+</div>

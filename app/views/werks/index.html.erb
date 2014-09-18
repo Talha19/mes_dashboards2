@@ -1,0 +1,35 @@
+<div id="wrapper">
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-3">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Werk</th>
+							<th>Stadt</th>
+							<th>Land</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% Werk.all.each do |werk| %>
+						<tr>
+							<td><%= werk.werk %></td>
+							<td><%= werk.stadt %></td>
+							<td><%= werk.land %></td>
+							<td> <%= link_to "View", werk_path(werk), class: 'btn btn-success' %>
+
+							<%= link_to "Edit", edit_werk_path(werk), class: 'btn btn-info' %>
+
+							<%= link_to "Destroy", werk_path(werk), class: 'btn btn-danger', method: :delete, confirm: "Are you sure?" %> </td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+
+				<%= link_to "New Werk", new_werk_path, class: 'btn btn-success' %>
+
+			</div>
+		</div>
+	</div>
+</div>

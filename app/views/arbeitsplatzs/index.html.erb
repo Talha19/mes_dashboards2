@@ -1,0 +1,31 @@
+<
+<div id="wrapper">
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-3">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Werk</th>
+							<th>Arbeitsplatz</th>
+							<th>Bezeichnung</th>
+							<th>Maschine</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% Arbeitsplatz.all.each do |arbeitsplatz| %>
+						<tr>
+							<td><%= arbeitsplatz.werk_id %></td>
+							<td><%= arbeitsplatz.name %></td>
+							<td><%= arbeitsplatz.bezeichnung %></td>
+							<td><%= arbeitsplatz.maschine %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<div id="wrapper">
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-3">
+				<%= bootstrap_form_for([@werk, @werk.comments.build]) do |f| %>
+				<%= f.text_field :name %>
+				<%= f.text_area :bezeichnung %>
+				<%= f.text_field :werk_id %>
+				<%= f.select :maschinentyps, @maschinentyp.map { |m| [m.name, m.bezeichnung] }, {}, multiple: true %>
+				<%= f.submit class: 'btn btn-success' %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

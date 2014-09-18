@@ -1,0 +1,2 @@
+module MaschinentypsHelper
+end

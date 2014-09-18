@@ -1,0 +1,14 @@
+<div id="wrapper">
+<div id="page-wrapper">
+<div class="row">
+	<div class="col-lg-3">
+		<%= bootstrap_form_for @werk do |f| %>
+		<%= f.text_field :werk %>
+		<%= f.text_field :stadt %>
+		<%= f.text_field :land %>
+		<%= f.submit class: 'btn btn-success' %>
+		<% end %>
+	</div>
+</div>
+</div>
+</div>

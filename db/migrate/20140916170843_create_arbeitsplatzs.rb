@@ -3,8 +3,8 @@ class CreateArbeitsplatzs < ActiveRecord::Migration
     create_table :arbeitsplatzs do |t|
       t.string  :name
       t.string  :bezeichnung
-      t.integer :werk_id
-      t.string  :maschine
+      t.references :werk, index: true
+      t.references :maschine, index: true
       t.timestamps
     end
   end

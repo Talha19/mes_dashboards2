@@ -1,10 +1,40 @@
 Rails.application.routes.draw do
+  # get 'arbeitsplatzs/index'
+# 
+  # get 'arbeitsplatzs/edit'
+# 
+  # get 'arbeitsplatzs/new'
+# 
+  # get 'arbeitsplatzs/show'
+# 
+  # get 'maschinentyps/index'
+# 
+  # get 'maschinentyps/edit'
+# 
+  # get 'maschinentyps/new'
+# 
+  # get 'maschinentyps/show'
+# 
+  # get 'werks/index'
+# 
+  # get 'werks/edit'
+# 
+  # get 'werks/new'
+
   devise_for :users
   root :to =>'home#index'
   get "home/index"
 
   get "home/tables"
 
+  resources :werks do
+    resources :arbeitsplatzs
+  end
+
+
+  resources :arbeitsplatzs do
+    resources :maschinentyps
+  end
   # match '/new' => 'oee#new', :as => 'new'
   resources :invoices
   # The priority is based upon order of creation: first created -> highest priority.
