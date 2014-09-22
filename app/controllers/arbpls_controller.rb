@@ -30,6 +30,7 @@ class ArbplsController < ApplicationController
   def show
     @werk = Werk.find(params[:werk_id])
     @arbpl = @werk.arbpls.find(params[:id])
+    @matyp = (@arbpl.matyp || @arbpl.build_matyp)
   end
 
   private

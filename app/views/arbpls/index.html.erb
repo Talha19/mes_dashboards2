@@ -20,10 +20,7 @@
 							<td><%= arbeitplatz.name %></td>
 							<td><%= arbeitplatz.beschr %></td>
 							<td>
-		<%= link_to 'Anzeigen', [arbeitplatz.werk, arbeitplatz],
-		class: 'btn btn-success',
-		method: :get %>
-								
+							<%= link_to "View", werk_arbpl_path(arbeitplatz.werk, arbeitplatz), class: 'btn btn-success' %>
 								</td>
 					</tr>
 						<% end %>

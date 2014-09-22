@@ -2,15 +2,28 @@
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-10">
-					      
-				<ul class="list-group">
-					<%= render @arbpl.matyp %>
-				</ul>
+				<h2>Maschinentyp zu Arbeitsplatz: <%= @arbpl.name %></h2>
+				<li class="list-group-item active">
+					<h4 class="list-group-item-heading">
+					<p>
+						<%= @matyp.name unless @matyp.nil? %>
+					</p></h4>
+					<p>
+						<%= @matyp.beschr unless @matyp.nil? %>
+					</p>
+					<p>
+					<%= link_to 'Destroy', @matyp, :confirm => 'Are you sure?', :method => :delete %>
+					</p>	
+				</li>
+				<% if @matyp.new_record? %>
 
 				<div class="col-lg-8">
 					<h2>Neuer Maschinentyp hinzufügen</h2>
+					<%= render 'matyp_form' %>
 					<%= link_to "Zurück zu den Werken", werks_path, class: 'btn btn-info' %>
 				</div>
+				<% end %>
+
 			</div>
 		</div>
 	</div>
