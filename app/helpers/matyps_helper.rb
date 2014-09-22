@@ -1,0 +1,2 @@
+module MatypsHelper
+end

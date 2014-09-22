@@ -1,25 +1,49 @@
 Rails.application.routes.draw do
-  # get 'arbeitsplatzs/index'
-# 
-  # get 'arbeitsplatzs/edit'
-# 
-  # get 'arbeitsplatzs/new'
-# 
-  # get 'arbeitsplatzs/show'
-# 
-  # get 'maschinentyps/index'
-# 
-  # get 'maschinentyps/edit'
-# 
-  # get 'maschinentyps/new'
-# 
-  # get 'maschinentyps/show'
-# 
-  # get 'werks/index'
-# 
-  # get 'werks/edit'
-# 
-  # get 'werks/new'
+# get 'matyps/view'
+#
+# get 'matyps/_form'
+#
+# get 'matyps/_matyp'
+#
+# get 'matyps/show'
+#
+# get 'arbpls/view'
+#
+# get 'arbpls/_form'
+#
+# get 'arbpls/_arbpl'
+#
+# get 'arbpls/show'
+#
+# get 'arbpl/view'
+#
+# get 'arbpl/_form'
+#
+# get 'arbpl/_arbpl'
+#
+# get 'arbpl/show'
+
+# get 'arbeitsplatzs/index'
+#
+# get 'arbeitsplatzs/edit'
+#
+# get 'arbeitsplatzs/new'
+#
+# get 'arbeitsplatzs/show'
+#
+# get 'maschinentyps/index'
+#
+# get 'maschinentyps/edit'
+#
+# get 'maschinentyps/new'
+#
+# get 'maschinentyps/show'
+#
+# get 'werks/index'
+#
+# get 'werks/edit'
+#
+# get 'werks/new'
 
   devise_for :users
   root :to =>'home#index'
@@ -28,12 +52,13 @@ Rails.application.routes.draw do
   get "home/tables"
 
   resources :werks do
-    resources :arbeitsplatzs
+    resources :arbpls do
+      resources :matyp
+    end
   end
 
-
-  resources :arbeitsplatzs do
-    resources :maschinentyps
+  resources :arbpls do
+    resources :matyp
   end
   # match '/new' => 'oee#new', :as => 'new'
   resources :invoices

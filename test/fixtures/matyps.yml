@@ -2,12 +2,10 @@
 
 one:
   name: MyString
-  : MyString
-  bezeichnung: MyString
-  : MyString
+  beschr: MyString
+  arbpl_id: 1
 
 two:
   name: MyString
-  : MyString
-  bezeichnung: MyString
-  : MyString
+  beschr: MyString
+  arbpl_id: 1

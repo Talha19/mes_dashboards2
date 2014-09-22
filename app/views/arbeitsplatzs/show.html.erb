@@ -2,17 +2,14 @@
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-10">
-				<h1> <%= @arbeitsplatz.name %> </h1>
-
-				<p>
-					<%= @arbeitsplatz.bezeichnung %>
-				</p>
-
+					      
 				<ul class="list-group">
-					<%= render @arbeitsplatz.maschinentyps %>
+
 				</ul>
+
 				<div class="col-lg-8">
 					<h2>Neuer Maschinentyp hinzufügen</h2>
+
 					<%= render 'maschinentyps/form' %>
 					<%= link_to "Zurück zu den Werken", werks_path, class: 'btn btn-info' %>
 				</div>
@@ -20,4 +17,4 @@
 			</div>
 		</div>
 	</div>
-</div>	
+</div>

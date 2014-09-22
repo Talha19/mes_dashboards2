@@ -22,11 +22,11 @@ class MaschinentypsController < ApplicationController
     @maschinentyp = Maschinentyp.new
   end
 
-
   def show
-    @maschinentyp = Maschinentyp.find(params[:id])
-  end
+  
+      @maschinentyp = Maschinentyp.find(params[:arbeitsplatz_id])
 
+  end
 
   def edit
     @maschinentyp = Maschinentyp.find(params[:id])

@@ -1,0 +1,2 @@
+module ArbplsHelper
+end

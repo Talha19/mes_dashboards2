@@ -12,11 +12,11 @@
 					<%= @werk.land %>
 				</p>
 				<ul class="list-group">
-					<%= render @werk.arbeitsplatzs %>
+					<%= render @werk.arbpls %>
 				</ul>
 				<div class="col-lg-8">
 					<h2>Neuer Arbeitsplatz</h2>
-					<%= render 'arbeitsplatzs/form' %>
+					<%= render 'arbpls/form' %>
 					<%= link_to "Zurück zu den Werken", werks_path, class: 'btn btn-info' %>
 				</div>
 

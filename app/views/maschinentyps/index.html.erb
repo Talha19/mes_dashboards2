@@ -1,4 +1,3 @@
-
 <div id="wrapper">
 	<div id="page-wrapper">
 		<div class="row">
@@ -8,7 +7,7 @@
 					<thead>
 						<tr>
 							<th>Maschinentyp</th>
-							<th>Bezeichnung</th>						
+							<th>Bezeichnung</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -17,17 +16,13 @@
 						<tr>
 							<td><%= maschinentyp.name %></td>
 							<td><%= maschinentyp.bezeichnung %></td>
-							<td> 
-
-
-							<%= link_to "Edit", maschinentyps_edit_path(maschinentyp), class: 'btn btn-info' %>
-
-					</tr>
+							<td> <%= link_to "Edit", maschinentyps_edit_path(maschinentyp), class: 'btn btn-info' %>
+						</tr>
 						<% end %>
 					</tbody>
 				</table>
 
-				<%= link_to "New article", new_arbeitsplatz_maschinentyps_path, class: 'btn btn-success' %> 
+				<%= link_to "New article", new_arbeitsplatz_maschinentyp_path, class: 'btn btn-success' %>
 
 			</div>
 		</div>

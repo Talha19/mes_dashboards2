@@ -23,7 +23,7 @@ class WerksController < ApplicationController
     @werk = Werk.find(params[:id])
     @werk.destroy
 
-    # redirect_to werks
+    redirect_to werks
   end
 
   def create

@@ -1,3 +1,3 @@
 class Werk < ActiveRecord::Base
-  has_many :arbeitsplatzs
+  has_many :arbpls
 end

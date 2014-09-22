@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MaschinentypTest < ActiveSupport::TestCase
+class MatypTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

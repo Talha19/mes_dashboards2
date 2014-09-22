@@ -28,7 +28,8 @@ class ArbeitsplatzsController < ApplicationController
   end
 
   def show
-    @arbeitsplatz = Arbeitsplatz.find(params[:id])
+    @werk = Werk.find(params[:werk_id])
+    @arbeitsplatz = @werk.arbeitsplatzs.find(params[:id])
   end
 
   private

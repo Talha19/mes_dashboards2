@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ArbeitsplatzTest < ActiveSupport::TestCase
+class ArbplTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

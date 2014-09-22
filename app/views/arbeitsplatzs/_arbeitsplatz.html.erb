@@ -8,7 +8,7 @@
 		class: 'btn btn-danger',
 		method: :delete,
 		data: { confirm: 'Sind Sie sicher?' } %>
-		
-		<td> <%= link_to "Details zu Arbeitsplatz", werk_arbeitsplatzs_path(arbeitsplatz), class: 'btn btn-success' %>
+
+		<%= link_to "View", werk_arbeitsplatz_path(arbeitsplatz.werk, arbeitsplatz), class: 'btn btn-success' %>
 	</p>
 </li>

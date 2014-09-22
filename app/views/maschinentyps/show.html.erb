@@ -1,18 +1,9 @@
 <h1>
-  <%= @maschinentyp.title %>
+  <%= @maschinentyp.name %>
 </h1>
  
 <p>
-  <%= @maschinentyp.text %>
+  <%= @maschinentyp.bezeichnung %>
 </p>
-
-<h2>Comments</h2>
-
-<ul class="list-group">
-	<%= render @maschinentyp.comments %>
-</ul>
-
-<h2>New Comment</h2>
-<%= render 'comments/form' %>
 
 <%= link_to "Back to articles", maschinentyp_path, class: 'btn btn-info' %>

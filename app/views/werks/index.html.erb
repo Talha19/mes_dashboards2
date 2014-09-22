@@ -17,11 +17,12 @@
 							<td><%= werk.werk %></td>
 							<td><%= werk.stadt %></td>
 							<td><%= werk.land %></td>
-							<td> <%= link_to "View", werk_path(werk), class: 'btn btn-success' %>
+							<td> 
+							<%= link_to "View", werk_path(werk), class: 'btn btn-success' %>
 
 							<%= link_to "Edit", edit_werk_path(werk), class: 'btn btn-info' %>
 
-							<%= link_to "Destroy", werk_path(werk), class: 'btn btn-danger', method: :delete, confirm: "Are you sure?" %> </td>
+							<%= link_to "Destroy", werk_path(werk), class: 'btn btn-danger', method: :delete, confirm: "Are you sure?" %>
 						</tr>
 						<% end %>
 					</tbody>
