@@ -29,7 +29,7 @@ class MatypsController < ApplicationController
 
   def show
       @arbpl = Arbpl.find(params[:arbpl_id])
-      @matyp = @arbpl.matyps.find(matyp_params)
+      @matyp = @arbpl.matyp
   end
 
   def edit
