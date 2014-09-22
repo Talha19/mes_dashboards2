@@ -59,3 +59,8 @@ java.util.ConcurrentModificationException
 !STACK 0
 org.jruby.exceptions.RaiseException: (Errno::EINVAL) =::
 	at org.jruby.RubyHash.replace(org/jruby/RubyHash.java:1623)
+
+!ENTRY com.aptana.formatter.epl 4 0 2014-09-22 22:27:33.486
+!MESSAGE (Build 3.4.2.201308081805) [ERROR] com.aptana.formatter.epl/debug Error while formatting the code in your editor.
+ Please submit a bug report through Studio's support and include the relevant code which triggered this error.
+ You may also turn on the com.aptana.formatter.epl/debug at the Studio's Troubleshooting preference page to log more details about this error.

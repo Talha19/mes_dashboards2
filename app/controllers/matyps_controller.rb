@@ -8,7 +8,7 @@ class MatypsController < ApplicationController
     @arbpl = Arbpl.find(params[:arbpl_id])
     # @matyp = @arbpl.matyps.create(matyp_params)
     @matyp = @arbpl.create_matyp(matyp_params)
-    redirect_to arbpl_path(@arbpl)
+    redirect_to werk_arbpl_path(@arbpl.werk, @arbpl)
      # @arbpl = Arbpl.find(params[:arbpl_id])
     # @matyp = @arbpl.build_matyp(matyp_params)
     # @matyp.save
@@ -17,10 +17,10 @@ class MatypsController < ApplicationController
 
   def destroy
     @arbpl = Arbpl.find(params[:arbpl_id])
-    @matyp = @arbpl.matyps.find(params[:id])
+    @matyp = @arbpl.matyp
 
     @matyp.destroy
-    # redirect_to arbpl_path(@arbpl)
+    redirect_to werk_arbpl_path(@arbpl.werk, @arbpl)
   end
 
   def new
@@ -29,11 +29,11 @@ class MatypsController < ApplicationController
 
   def show
       @arbpl = Arbpl.find(params[:arbpl_id])
-      @matyp = @arbpl.matyps.find(params[:id])
+      @matyp = @arbpl.matyps.find(matyp_params)
   end
 
   def edit
-    @matyp = Matyp.find(params[:id])
+    @matyp = Matyp.find(matyp_params)
   end
 
   private

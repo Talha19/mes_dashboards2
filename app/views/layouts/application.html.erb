@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
 
 		<title>ORBIS AG MES WEB-Reporting</title>
-		 <%= stylesheet_link_tag 'bootstrap.css','sb-admin.css','font-awesome/css/font-awesome.min.css','http://cdn.oesmith.co.uk/morris-0.4.3.min.css' %>
-		<%= javascript_include_tag :defaults %>
+		<%= stylesheet_link_tag 'bootstrap.css','sb-admin.css','font-awesome/css/font-awesome.min.css','http://cdn.oesmith.co.uk/morris-0.4.3.min.css' %>
 		<%= javascript_include_tag "application" %>
+
+		<%= csrf_meta_tag %>
 	</head>
 
 	<body>
@@ -55,7 +57,7 @@
 									<i class="fa fa-table"></i><%= link_to 'Daten aktualisieren', '/oee/new' %>
 								</li>
 								<!-- <li>
-									<a href="#">Another Item</a>
+								<a href="#">Another Item</a>
 								</li> -->
 							</ul>
 						</li>
