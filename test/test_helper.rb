@@ -9,5 +9,14 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   fixtures :all
 
+
+def new_mail( charset="UTF-8" )
+  mail = Mail.new
+  mail.mime_version = "1.0"
+  if charset
+    mail.content_type ["text", "plain", { "charset" => charset }]
+  end
+  mail
+end
   # Add more helper methods to be used by all tests here...
 end

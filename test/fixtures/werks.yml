@@ -2,16 +2,10 @@
 
 one:
   werk: MyString
-  : 1
   stadt: MyString
-  : MyString
   land: MyString
-  : MyString
 
 two:
   werk: MyString
-  : 1
   stadt: MyString
-  : MyString
   land: MyString
-  : MyString

@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   end
   
   resources :matyps
+  
   # match '/new' => 'oee#new', :as => 'new'
-  resources :invoices
+  # resources :invoices
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

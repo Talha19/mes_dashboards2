@@ -8,6 +8,7 @@
 		<meta name="author" content="">
 
 		<title>ORBIS AG MES WEB-Reporting</title>
+
 		<%= stylesheet_link_tag 'bootstrap.css','sb-admin.css','font-awesome/css/font-awesome.min.css','http://cdn.oesmith.co.uk/morris-0.4.3.min.css' %>
 		<%= javascript_include_tag "application" %>
 
@@ -116,7 +117,8 @@
 						</ul>
 						</li> -->
 						<li class="dropdown user-dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <%= current_user.email %><b class="caret"></b></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="fa fa-user"></i> <%= current_user.email %><b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<!-- <li>
 								<a href="#"><i class="fa fa-user"></i> Profile</a>
@@ -149,11 +151,11 @@
 
 		<!-- JavaScript -->
 		<%= javascript_include_tag "jquery" %>
-		<%= javascript_include_tag "bootstrap.js" %>
-		<%= javascript_include_tag "raphael-min.js" %>
-		<%= javascript_include_tag "morris-0.4.3.min.js" %>
-		<%= javascript_include_tag "morris/chart-data-morris.js" %>
-		<%= javascript_include_tag "tablesorter/jquery.tablesorter.js" %>
+		<%= javascript_include_tag "bootstrap" %>
+		<%= javascript_include_tag "raphael-min" %>
+		<%= javascript_include_tag "morris-0.4.3.min" %>
+		<%= javascript_include_tag "morris/chart-data-morris" %>
+		<%= javascript_include_tag "tablesorter/jquery.tablesorter" %>
 		<%= javascript_include_tag "tablesorter/tables.js" %>
 		<%= javascript_include_tag "flot/jquery.flot.js" %>
 		<%= javascript_include_tag "flot/jquery.flot.tooltip.min.js" %>
