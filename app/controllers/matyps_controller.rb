@@ -8,7 +8,9 @@ class MatypsController < ApplicationController
     @arbpl = Arbpl.find(params[:arbpl_id])
     # @matyp = @arbpl.matyps.create(matyp_params)
     @matyp = @arbpl.create_matyp(matyp_params)
-    redirect_to werk_arbpl_path(@arbpl.werk, @arbpl)
+    # redirect_to werk_arbpl_path(@arbpl.werk, @arbpl)
+    NotificationMailer.new_matyp(@matyp,@arbpl,@arbpl.werk).deliver
+    render "notification_mailer/new_matyp.html.erb"
      # @arbpl = Arbpl.find(params[:arbpl_id])
     # @matyp = @arbpl.build_matyp(matyp_params)
     # @matyp.save

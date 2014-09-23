@@ -1,9 +1,17 @@
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></pre>
-<h1><%= @user.email %></h1>
-<h1>Ein Werk wurde hinzugefügt</h1>
-<h2><%= @werk.werk %></h2>
-<pre>
-
- 
-This email was sent out to you, because you are subscribed to the postbox-mailing-list.
-If you want to unscribscribe, please use this url: <%= @url %>.
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</pre>
+<div id="wrapper">
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-12">
+				<% @user = User.find(current_user) %>
+				<h1>Hallo <%= @user.email %>!</h1>
+				<h1>Ein Werk wurde hinzugefügt!</h1>
+				<pre>
+<h2>"<%= @werk.werk %>" befindet sich in <%= @werk.stadt %> in <%= @werk.land %> </h2>
+Das Werk "<%= @werk.werk %>" besitzt noch keine Arbeitplätze. Bitte pflegen Sie Arbeitsülätze zu diesem Werk.
+</div>	
+<%= link_to "Zurück zu den Werken", werks_path(@werk), class: 'btn btn-success' %>
+	</div>
+	</div>
+</div>

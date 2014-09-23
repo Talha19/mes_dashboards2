@@ -8,7 +8,9 @@ class ArbplsController < ApplicationController
  def create
     @werk = Werk.find(params[:werk_id])
     @arbpl = @werk.arbpls.create(abpl_params)
-    redirect_to werk_path(@werk)
+    NotificationMailer.new_arbpl(@arbpl,@werk).deliver
+    render "notification_mailer/new_arbpl.html.erb"
+    # redirect_to werk_path(@werk)
   end
 
   def destroy

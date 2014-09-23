@@ -31,8 +31,8 @@ class WerksController < ApplicationController
 
     if @werk.save then
       NotificationMailer.new_werk(@werk).deliver
-      # render "notification_mailer/new_werk.html.erb"
-      redirect_to @werk
+      render "notification_mailer/new_werk.html.erb"
+      # redirect_to @werk
     else
       render 'new'
     end

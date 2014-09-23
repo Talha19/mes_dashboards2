@@ -1,0 +1,20 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</pre>
+<div id="wrapper">
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-12">
+				<% @user = User.find(current_user) %>
+				<h1>Hallo <%= @user.email %></h1>
+				<h1>Ein Maschinentyp zu Arbeitsplatz "<%= @arbpl.name %>" im Werk "<%= @arbpl.werk.werk %>" wurde hinzugefügt!</h1>
+				<pre>
+<h2>Werk "<%= @arbpl.werk.werk %>" befindet sich in <%= @arbpl.werk.stadt %> in <%= @arbpl.werk.land %>	 </h2>
+Zu Werk "<%= @arbpl.werk.werk %>" wurde dem Arbeitplatz "<%= @arbpl.name %>" ein Maschinentyp namens "<%= @matyp.name %>" hinzugefügt. 
+Hier eine Beschreibung des Arbeitsplatzes: "<%= @arbpl.beschr %>".
+Hier eine Beschreibung des Maschinentyps: "<%= @matyp.beschr %>". 
+
+</div>	
+<%= link_to "Zurück zu den Werken", werk_path(@arbpl.werk), class: 'btn btn-success' %>
+	</div>
+	</div>
+</div>
