@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140921102415) do
+ActiveRecord::Schema.define(version: 20140923195238) do
 
-  # create_table "arbeitsplatzs", force: true do |t|
-    # t.string   "name"
-    # t.string   "bezeichnung"
-    # t.integer  "werk_id"
-    # t.string   "maschine"
-    # t.datetime "created_at"
-    # t.datetime "updated_at"
-  # end
+  create_table "arbeitsplatzs", force: true do |t|
+    t.string   "name"
+    t.string   "bezeichnung"
+    t.integer  "werk_id"
+    t.string   "maschine"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "arbpls", force: true do |t|
     t.string   "name"
@@ -29,14 +29,16 @@ ActiveRecord::Schema.define(version: 20140921102415) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
- add_index "arbpls", ["werk_id"], name: "index_arbpls_on_werk_id", using: :btree
-  # create_table "maschinentyps", force: true do |t|
-    # t.string   "name"
-    # t.string   "bezeichnung"
-    # t.datetime "created_at"
-    # t.datetime "updated_at"
-    # t.integer  "arbpl_id"
-  # end
+
+  add_index "arbpls", ["werk_id"], name: "index_arbpls_on_werk_id"
+
+  create_table "maschinentyps", force: true do |t|
+    t.string   "name"
+    t.string   "bezeichnung"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "arbpl_id"
+  end
 
   create_table "matyps", force: true do |t|
     t.string   "name"
@@ -45,7 +47,9 @@ ActiveRecord::Schema.define(version: 20140921102415) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
- add_index "matyps", ["arbpl_id"], name: "index_matyps_on_arbpl_id", using: :btree
+
+  add_index "matyps", ["arbpl_id"], name: "index_matyps_on_arbpl_id"
+
   create_table "oees", force: true do |t|
     t.string   "werk"
     t.date     "datum"
@@ -83,6 +87,10 @@ ActiveRecord::Schema.define(version: 20140921102415) do
     t.string   "land"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

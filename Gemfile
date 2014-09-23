@@ -28,6 +28,12 @@ gem 'bootstrap_form'
 gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'autoprefixer-rails'
+
+gem 'paperclip', '~> 3.4.1'
+
+gem 'cocaine', '~> 0.5.4'
+
+gem 'aws-sdk'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

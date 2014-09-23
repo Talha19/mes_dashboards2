@@ -51,7 +51,7 @@ class WerksController < ApplicationController
 
   def werk_params
 
-    params.require(:werk).permit(:werk, :stadt, :land)
+    params.require(:werk).permit(:werk, :stadt, :land, :avatar)
   end
 
 end

@@ -1,0 +1,4 @@
+FIND_BAR_DECORATOR_FIND_ENTRIES=\#\r\n\#Tue Sep 23 19\:42\:47 CEST 2014\r\n9\=maschinentyp\r\n8\=@maschinentyp\r\n7\=Maschinentyp\r\n6\=Arbeitsplatz\r\n5\=@arbeitsplatz\r\n4\=arbeitsplatz\r\n3\=dropdown\r\n2\=map\r\n1\=hs\r\n0\=hsla\r\n
+FIND_BAR_DECORATOR_REPLACE_ENTRIES=\#\r\n\#Sun Sep 21 14\:19\:55 CEST 2014\r\n5\=matyp\r\n4\=@matyp\r\n3\=Matyp\r\n2\=Arbpl\r\n1\=@arbpl\r\n0\=arbpl\r\n
+com.aptana.editor.findbar.caseSensitiveFindBar=true
+eclipse.preferences.version=1
