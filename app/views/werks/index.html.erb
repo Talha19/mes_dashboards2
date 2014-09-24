@@ -1,7 +1,7 @@
 <div id="wrapper">
 	<div id="page-wrapper">
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-lg-10">
 				<h1>Werke </br><small>Überblick über die Werke</small></h1>
 				<table class="table">
 					<thead>
@@ -19,19 +19,17 @@
 							<td><%= werk.werk %></td>
 							<td><%= werk.stadt %></td>
 							<td><%= werk.land %></td>
-							<td> <%= image_tag werk.avatar.url(:medium) %></td>
+							<td> <%= image_tag werk.avatar %></td>
+							<td> <%= link_to "Anzeigen", werk_path(werk), class: 'btn btn-success' %>
 
-							<td> <%= link_to "View", werk_path(werk), class: 'btn btn-success' %>
+							<%= link_to "Bearbeiten", edit_werk_path(werk), class: 'btn btn-info' %>
 
-							<%= link_to "Edit", edit_werk_path(werk), class: 'btn btn-info' %>
-
-							<%= link_to "Destroy", werk_path(werk), class: 'btn btn-danger', method: :delete, confirm: "Are you sure?" %>
+							<%= link_to "Löschen", werk_path(werk), class: 'btn btn-danger', method: :delete, confirm: "Are you sure?" %> </td>
 						</tr>
 						<% end %>
 					</tbody>
 				</table>
-
-				<%= link_to "New Werk", new_werk_path, class: 'btn btn-success' %>
+				<%= link_to "Neuer Werk", new_werk_path, class: 'btn btn-success' %>
 			</div>
 
 		</div>

@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<title>ORBIS AG MES WEB-Reporting</title>
+		<title>Verwaltung der Werke</title>
 
 		<%= stylesheet_link_tag 'bootstrap.css','sb-admin.css','font-awesome/css/font-awesome.min.css','http://cdn.oesmith.co.uk/morris-0.4.3.min.css' %>
 		<%= javascript_include_tag "application" %>
@@ -36,13 +36,13 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav side-nav">
-						<li>
+						<!-- <li>
 							<i class="fa fa-dashboard"></i><%= link_to 'Dashboards', '/home/index' %>
 						</li>
-						<!-- <li class="active"> -->
+						<!-- <li class="active"> 
 						<li>
 							<i class="fa fa-table"></i><%= link_to 'Tabellen u. Details', '/home/tables' %>
-						</li>
+						</li> -->
 
 						<li>
 							<i class="fa fa-table"></i><%= link_to 'Werke', '/werks/' %>
@@ -56,17 +56,17 @@
 						<li><a href="bootstrap-elements.html"><i class="fa fa-desktop"></i> Bootstrap Elements</a></li>
 						<li><a href="bootstrap-grid.html"><i class="fa fa-wrench"></i> Bootstrap Grid</a></li>
 						<li><a href="blank-page.html"><i class="fa fa-file"></i> Blank Page</a></li>-->
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Daten <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li>
-									<i class="fa fa-table"></i><%= link_to 'Daten aktualisieren', '/oee/new' %>
-								</li>
-								<!-- <li>
-								<a href="#">Another Item</a>
-								</li> -->
-							</ul>
-						</li>
+							<!-- <li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Daten <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li>
+										<i class="fa fa-table"></i><%= link_to 'Daten aktualisieren', '/oee/new' %>
+									</li>
+									<!-- <li>
+									<a href="#">Another Item</a>
+									</li>
+								</ul>
+							</li> -->
 
 					</ul>
 

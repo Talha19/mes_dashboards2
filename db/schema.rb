@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923195238) do
+ActiveRecord::Schema.define(version: 20140924204410) do
 
   create_table "arbeitsplatzs", force: true do |t|
     t.string   "name"
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 20140923195238) do
   add_index "matyps", ["arbpl_id"], name: "index_matyps_on_arbpl_id"
 
   create_table "oees", force: true do |t|
-    t.string   "werk"
     t.date     "datum"
     t.string   "arbpl"
     t.string   "shift_text"
@@ -61,7 +60,12 @@ ActiveRecord::Schema.define(version: 20140923195238) do
     t.float    "ist_stoe"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "werk_id"
+    t.integer  "arbpl_id"
   end
+
+  add_index "oees", ["arbpl_id"], name: "index_oees_on_arbpl_id"
+  add_index "oees", ["werk_id"], name: "index_oees_on_werk_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

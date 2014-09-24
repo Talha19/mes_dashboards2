@@ -1,0 +1,14 @@
+<div id="wrapper">
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-2">
+				<%= bootstrap_form_for ([ @werk, @arbpl ]) do |f| %>
+				<%= f.text_field :ist_prod %>
+				<%= f.text_field :ist_ruest %>
+				<%= f.text_field :ist_still %>
+				<%= f.text_field :ist_stoe %>
+				<%= f.submit "OK", class: 'btn btn-success' %>
+				<% end %>
+			</div>
+		</div>
+	</div>

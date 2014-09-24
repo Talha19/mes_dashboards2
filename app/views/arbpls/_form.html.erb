@@ -5,6 +5,10 @@
 				<%= bootstrap_form_for([@werk, @werk.arbpls.build]) do |f| %>
 				<%= f.text_field :name %>
 				<%= f.text_area :beschr %>
+				<!-- <%= f.text_field :ist_prod %>
+				<%= f.text_field :ist_ruest %>
+				<%= f.text_field :ist_still %>
+				<%= f.text_field :ist_stoe %> -->
 				<%= f.submit class: 'btn btn-success' %>
 				<% end %>
 			</div>

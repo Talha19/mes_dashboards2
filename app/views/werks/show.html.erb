@@ -1,15 +1,11 @@
 <div id="wrapper">
 	<div id="page-wrapper">
 		<div class="row">
-			<div class="col-lg-10">
-				<h1> <%= @werk.werk %> </h1>
+			<div class="col-lg-5">
+				<h1>Werk: "<%= @werk.werk %>" </h1>
 
 				<p>
-					<%= @werk.stadt %>
-				</p>
-
-				<p>
-					<%= @werk.land %>
+					<%= @werk.stadt %> in <%= @werk.land %>
 				</p>
 				<ul class="list-group">
 					<%= render @werk.arbpls %>
@@ -17,9 +13,9 @@
 				<div class="col-lg-8">
 					<h2>Neuer Arbeitsplatz</h2>
 					<%= render 'arbpls/form' %>
-					<%= link_to "Zurück zu den Werken", werks_path, class: 'btn btn-info' %>
-				</div>
 
+				</div>
+					<%= link_to "Zurück zu den Werken", werks_path, class: 'btn btn-info' %>
 			</div>
 		</div>
 	</div>

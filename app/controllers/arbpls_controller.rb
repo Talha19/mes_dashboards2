@@ -26,7 +26,8 @@ class ArbplsController < ApplicationController
   end
 
   def edit
-    @arbpl = Arbpl.find(params[:id])
+    @werk = Werk.find(params[:werk_id])
+    @arbpl = @werk.arbpls.find(params[:id])
   end
 
   def show
@@ -38,7 +39,7 @@ class ArbplsController < ApplicationController
   private
 
   def abpl_params
-    params.require(:arbpl).permit(:name, :beschr)
+    params.require(:arbpl).permit(:name, :beschr, :ist_prod, :ist_ruest, :ist_still, :ist_stoe)
   end
 
 end
