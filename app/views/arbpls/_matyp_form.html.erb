@@ -3,9 +3,9 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<%= bootstrap_form_for ([@arbpl, @matyp]) do |f| %>
-				<%= f.text_field :name %>
-				<%= f.text_area :beschr %>
-				<%= f.submit class: 'btn btn-success' %>
+				<%= f.text_field :name, placeholder:'Maschinentyp', label:'Maschine' %>
+				<%= f.text_area :beschr , placeholder:'Maschinenbeschreibung', label:'Beschreibung' %>
+				<%= f.submit "Maschine hinzufügen", class: 'btn btn-success' %>
 				<% end %>
 			</div>
 		</div>

@@ -5,11 +5,13 @@
 		Beschreibung: <%= arbpl.beschr %>
 	</p>
 	<p>
+
 		<%= link_to 'löschen', [arbpl.werk, arbpl],
 		class: 'btn btn-danger',
 		method: :delete,
 		data: { confirm: 'Sind Sie sicher?' } %>
 		<%= link_to "Bearbeiten", edit_werk_arbpl_path(arbpl.werk, arbpl), class: 'btn btn-info' %>
 		<%= link_to "View", werk_arbpl_path(arbpl.werk, arbpl), class: 'btn btn-success' %>
+
 	</p>
 </li>

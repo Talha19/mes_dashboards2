@@ -9,10 +9,12 @@
 				<h1>Ein Arbeitsplatz zu Werk "<%= @werk.werk %>"  wurde hinzugefügt!</h1>
 				<pre>
 <h2>Werk "<%= @werk.werk %>" befindet sich in <%= @werk.stadt %> in <%= @werk.land %> </h2>
-Zu "<%= @werk.werk %>" wurde der Arbeitplatz "<%= @arbpl.name %>" hinzugefügt. Hier eine Beschreibung des Arbeitsplatzes: "<%= @arbpl.beschr %>" 
+Zu Werk "<%= @werk.werk %>" wurde der Arbeitplatz "<%= @arbpl.name %>" hinzugefügt. Hier eine Beschreibung des Arbeitsplatzes: "<%= @arbpl.beschr %>" 
 
 </div>	
-<%= link_to "Zurück zu den Werken", werk_path(@werk), class: 'btn btn-success' %>
+<div class="col-lg-10">
+<%= link_to "Zurück zu Werk" , werk_path(@werk), class: 'btn btn-success' %>
 	</div>
+</div>
 	</div>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924204410) do
+ActiveRecord::Schema.define(version: 20140925173222) do
 
   create_table "arbeitsplatzs", force: true do |t|
     t.string   "name"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 20140924204410) do
   end
 
   add_index "arbpls", ["werk_id"], name: "index_arbpls_on_werk_id"
+
+  create_table "marbeiters", force: true do |t|
+    t.string   "name"
+    t.string   "vname"
+    t.integer  "arbpl_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "maschinentyps", force: true do |t|
     t.string   "name"

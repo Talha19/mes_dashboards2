@@ -1,0 +1,13 @@
+<div id="wrapper">
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-12">
+				<%= bootstrap_form_for ([@arbpl, @marbeiter]) do |f| %>
+				<%= f.text_field :name, placeholder:'Name', label:'Name' %>
+				<%= f.text_field :vname, placeholder:'Vorname', label:'Vorname' %>
+				<%= f.submit "Mitarbeiter hinzufügen", class: 'btn btn-success' %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

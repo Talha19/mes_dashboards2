@@ -10,8 +10,11 @@
 				<pre>
 <h2>"<%= @werk.werk %>" befindet sich in <%= @werk.stadt %> in <%= @werk.land %> </h2>
 Das Werk "<%= @werk.werk %>" besitzt noch keine Arbeitplätze. Bitte pflegen Sie Arbeitsülätze zu diesem Werk.
-</div>	
-<%= link_to "Zurück zu den Werken", werks_path(@werk), class: 'btn btn-success' %>
-	</div>
+
+
+</div>			<div class="col-lg-10">
+				<%= link_to "Zurück zu den Werken", werks_path(@werk), class: 'btn btn-success' %>
+			</div>
+		</div>
 	</div>
 </div>

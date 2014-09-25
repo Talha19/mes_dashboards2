@@ -15,7 +15,13 @@ Rails.application.routes.draw do
     resources :matyps
   end
   
+    resources :arbpls do
+    resources :marbeiters
+  end
+  
   resources :matyps
+  
+  resources :marbeiters
   
   # match '/new' => 'oee#new', :as => 'new'
   # resources :invoices

@@ -1,32 +1,92 @@
 <div id="wrapper">
 	<div id="page-wrapper">
+
 		<div class="row">
-			<div class="col-lg-10">
-				<h2>Maschinentyp zu Arbeitsplatz: <%= @arbpl.name %></h2>
+			<div class="col-lg-5">
+				<h1>Arbeitsplatz <%= @arbpl.name %> bearbeiten</h1>
+				<%= link_to "Zurück zu Werk", werks_path, class: 'btn btn-info' %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-5">
 
-				<% if @matyp.new_record? %>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<% if @matyp.new_record? %>
+						Maschine zu Arbeitsplatz <%= @arbpl.name %>
+						<% else %>
+						Neuer Maschinentyp hinzufügen
+						<% end %>
+					</div>
+					<div class="panel-body">
 
-				<div class="col-lg-8">
-					<h2>Neuer Maschinentyp hinzufügen</h2>
-					<%= render 'matyp_form' %>
+						<% if @matyp.new_record? %>
+
+						<div class="col-lg-8">
+							<%= render 'matyp_form' %>
+						</div>
+						<% else %>
+						<h2></h2>
+						<li class="list-group-item active">
+							<h4 class="list-group-item-heading">
+							<p>
+								Maschine: <%= @matyp.name unless @matyp.nil? %>
+							</p></h4>
+							<p>
+								Beschreibung: <%= @matyp.beschr unless @matyp.nil? %>
+							</p>
+							<p>
+								<%= link_to 'Destroy', [@arbpl, @arbpl.matyp], class: 'btn btn-danger', method: :delete, confirm: "Are you sure?" %>
+							</p>
+						</li>
+						<% end %>
+					</div>
 				</div>
-				<% else %>
+			</div>
+		</div>
+		<% if not @arbpl.marbeiters.blank? %>
+		<div class="row">
+			<div class="col-lg-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Mitarbeiter zu Arbeitsplatz <%= @arbpl.name %>
+					</div>
+					<div class="panel-body">
 
-				<li class="list-group-item active">
-					<h4 class="list-group-item-heading">
-					<p>
-						<%= @matyp.name unless @matyp.nil? %>
-					</p></h4>
-					<p>
-						<%= @matyp.beschr unless @matyp.nil? %>
-					</p>
-					<p>
-						<%= link_to 'Destroy', [@arbpl, @arbpl.matyp], class: 'btn btn-danger', method: :delete, confirm: "Are you sure?" %>
-					</p>
-				</li>
-				<% end %>
-					<%= link_to "Zurück zu den Werken", werks_path, class: 'btn btn-info' %>
+						<%@arbpl.marbeiters.each do |arbeiter|%>
+						<li class="list-group-item active">
+							<h4 class="list-group-item-heading">
+							<p>
+								ID: <%= arbeiter.id unless arbeiter.nil? %>
+							</p>
+							<p>
+								Name: <%= arbeiter.name unless arbeiter.nil? %>
+							</p></h4>
+							<p>
+								Vorname: <%= arbeiter.vname unless arbeiter.nil? %>
+							</p>
+						</li>
+						<% end %>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<% end %>
+		<div class="row">
+			<div class="col-lg-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Neuen Mitarbeiter hinzufügen
+					</div>
+					<div class="panel-body">
+
+						<%= render 'marbeiters_form' %>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
 </div>
+

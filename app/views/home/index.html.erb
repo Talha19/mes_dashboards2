@@ -1,9 +1,211 @@
 <% if user_signed_in? %>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
 
+	</head>
+	<div id="wrapper">
+		<div id="page-wrapper">
+			<div class="row">
+				
+				<div class="col-lg-12">
+					<h1> Overview </h1>
+					<div class="alert alert-success alert-dismissable">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+							&times;
+						</button>
+						Herzlich Willkommen. Hier ist eine kleine Zusammenfassung Ihres Unternehmens.
+					</div>
+				</div>
+			</div><!-- /.row -->
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title"><i class="fa fa-money"></i> Werke Ihres Unternehmens</h3>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<i class="fa fa-comments fa-5x"></i>
+							</div>
+							<div class="col-xs-6 text-center">
 
+								<p class="announcement-heading">
+									Anzahl der Werke Ihres Unternehmens: <%= Werk.count %>
+								</p>
+								<p class="announcement-heading">
 
-<% else %>
-  <script type="text/javascript">
-    window.location.href="/users/sign_in"  // put your correct path in a string here
-  </script>
-<% end %>
+								</p>
+								<p class="announcement-text">
+
+								</p>
+								<p class="announcement-text">
+
+								</p>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table class="table table-bordered table-hover table-striped tablesorter" id="ist_prod_tabelle" >
+									<thead>
+										<tr>
+											<th data-field="werk" data-checkbox="true" i class="fa fa-sort">Werk</th>
+											<th data-field="datum" data-sortable="true" i class="fa fa-sort">Stadt</th>
+											<th data-field="arbpl" data-sortable="true" i class="fa fa-sort">Land</th>
+											<th data-field="arbpl" data-sortable="true" i class="fa fa-sort">Anz.Arbpls</th>
+											<th data-field="arbpl" data-sortable="true" i class="fa fa-sort">Anz.Marbeiter</th>
+										</tr>
+									</thead>
+
+									<% werks = Werk.all %>
+									<% werks .each do |werk|%>
+									<tr>
+
+										<td><%= h werk.werk %></td>
+										<td><%= h werk.stadt %></td>
+										<td><%= h werk.land %></td>
+										<td><%= h werk.arbpls.count %></td>
+										<td><%= Marbeiter.where(arbpl_id: Arbpl.select("arbpl_id").where(werk_id: werk)).count %></td>
+									</tr>
+									<% end %>
+
+									</tbody>
+
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title"><i class="fa fa-money"></i> Arbeitsplätze und Maschinen Ihres Unternehmens</h3>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<i class="fa fa-comments fa-5x"></i>
+							</div>
+							<div class="col-xs-6 text-center">
+
+								<p class="announcement-heading">
+									Anzahl der Arbeitpläze Ihres Unternehmens: <%= Arbpl.count %>
+								</p>
+								<p class="announcement-heading">
+
+								</p>
+								<p class="announcement-text">
+
+								</p>
+								<p class="announcement-text">
+
+								</p>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table class="table table-bordered table-hover tablesorter" id="werte" data-toggle="table" data-height="299" data-search="true">
+									<thead>
+										<tr>
+											<th data-field="werk" data-checkbox="true" i class="fa fa-sort">Werk</th>
+											<th data-field="werk" data-checkbox="true" i class="fa fa-sort">Arbeitsplatz</th>
+											<th data-field="arbpl" data-sortable="true" i class="fa fa-sort">Maschinentyp</th>
+										</tr>
+									</thead>
+
+									<% arbpls = Arbpl.all %>
+									<% arbpls .each do |arbpls|%>
+									<tr>
+
+										<td><%= h arbpls.werk.werk %></td>
+										<td><%= h arbpls.name %>
+										<br>
+										<%= h arbpls.beschr %></td>
+										<% if not arbpls.matyp.blank? %>
+										<td><%= h arbpls.matyp.name %>
+										<br>
+										<%= h arbpls.matyp.beschr %> </td>
+										<% else %>
+											<td>---- Keine Maschine ----</td>
+										<% end %>
+									</tr>
+									<% end %>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title"><i class="fa fa-money"></i> Mitarbeiter Ihres Unternehmens</h3>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<i class="fa fa-comments fa-5x"></i>
+							</div>
+							<div class="col-xs-6 text-center">
+
+								<p class="announcement-heading">
+									Anzahl der Mitarbeiter Ihres Unternehmens: <%= Marbeiter.count %>
+								</p>
+								<p class="announcement-heading">
+
+								</p>
+								<p class="announcement-text">
+
+								</p>
+								<p class="announcement-text">
+
+								</p>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table class="table table-bordered table-hover tablesorter" id="werte" data-toggle="table" data-height="299" data-search="true">
+									<thead>
+										<tr>
+											<th data-field="werk" data-checkbox="true" i class="fa fa-sort">Werk</th>
+											<th data-field="werk" data-checkbox="true" i class="fa fa-sort">Per.Nr.</th>
+											<th data-field="werk" data-checkbox="true" i class="fa fa-sort">Name</th>
+											<th data-field="werk" data-checkbox="true" i class="fa fa-sort">Arbeitsplatz</th>
+											<th data-field="arbpl" data-sortable="true" i class="fa fa-sort">Maschinentyp</th>
+										</tr>
+									</thead>
+
+									<% marbeiter = Marbeiter.all %>
+									<% marbeiter .each do |marbeiter|%>
+									<tr>
+
+										<td><%= h marbeiter.arbpl.werk.werk %></td>
+										<td><%= h marbeiter.id %></td>
+										<td><%= h marbeiter.name %>
+										<br>
+										<%= h marbeiter.vname %></td>
+										<td><%= h marbeiter.arbpl.name %>
+										<br>
+										<%= h marbeiter.arbpl.beschr %> </td>
+										<td><%= h marbeiter.arbpl.matyp.name %>
+										<br>
+										<%= h marbeiter.arbpl.matyp.beschr %> </td>
+									</tr>
+									<% end %>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<% else %>
+	<script type="text/javascript">
+		window.location.href = "/users/sign_in" // put your correct path in a string here
+	</script>
+	<% end %>
