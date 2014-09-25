@@ -3,9 +3,9 @@
 one:
   name: MyString
   beschr: MyString
-  \werk_id: 1
+  werk_id: 1
 
 two:
   name: MyString
   beschr: MyString
-  \werk_id: 1
+  werk_id: 1

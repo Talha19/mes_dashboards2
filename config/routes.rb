@@ -19,9 +19,9 @@ Rails.application.routes.draw do
     resources :marbeiters
   end
   
-  resources :matyps
-  
-  resources :marbeiters
+  # resources :matyps
+#   
+  # resources :marbeiters
   
   # match '/new' => 'oee#new', :as => 'new'
   # resources :invoices

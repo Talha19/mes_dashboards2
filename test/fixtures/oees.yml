@@ -1,21 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  werk: MyString
-  datum: 2014-09-13
-  arbpl: MyString
-  shift_text: MyString
-  ist_prod: 1.5
-  ist_ruest: 1.5
-  ist_still: 1.5
-  ist_stoe: 1.5
-
-two:
-  werk: MyString
-  datum: 2014-09-13
-  arbpl: MyString
-  shift_text: MyString
-  ist_prod: 1.5
-  ist_ruest: 1.5
-  ist_still: 1.5
-  ist_stoe: 1.5
+# one:
+  # werk: MyString
+  # datum: 2014-09-13
+  # arbpl: MyString
+  # shift_text: MyString
+  # ist_prod: 1.5
+  # ist_ruest: 1.5
+  # ist_still: 1.5
+  # ist_stoe: 1.5
+# 
+# two:
+  # werk: MyString
+  # datum: 2014-09-13
+  # arbpl: MyString
+  # shift_text: MyString
+  # ist_prod: 1.5
+  # ist_ruest: 1.5
+  # ist_still: 1.5
+  # ist_stoe: 1.5
