@@ -15,7 +15,7 @@
 				</div>
 			</div>
 		</div>
-
+		<% if not @werk.arbpls.blank? %>
 		<div class="row">
 			<div class="col-lg-5">
 				<div class="panel panel-default">
@@ -31,24 +31,24 @@
 				</div>
 			</div>
 		</div>
+		<% end %>
 
+		<div class="row">
+			<div class="col-lg-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Neuer Arbeitsplatz
+					</div>
+					<div class="panel-body">
+						<ul class="list-group">
+							<%= render 'arbpls/form' %>
 
-	<div class="row">
-		<div class="col-lg-5">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					Neuer Arbeitsplatz
-				</div>
-				<div class="panel-body">
-					<ul class="list-group">
-						<%= render 'arbpls/form' %>
-
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-</div>
+	</div>
 </div>
 </div>
 </div>
