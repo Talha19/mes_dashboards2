@@ -65,7 +65,7 @@
 										<td><%= h werk.stadt %></td>
 										<td><%= h werk.land %></td>
 										<td><%= h werk.arbpls.count %></td>
-										<td><%= Marbeiter.where(arbpl_id: Arbpl.select("arbpl_id").where(werk_id: werk)).count %></td>
+										<td><%= Marbeiter.where(:arbpl_id => Arbpl.select("arbpl_id").where(:werk_id => werk)).count %></td>
 									</tr>
 									<% end %>
 
